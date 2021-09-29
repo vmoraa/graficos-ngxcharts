@@ -1,0 +1,37 @@
+import { OnChanges, SimpleChanges } from '@angular/core';
+import { ColorHelper } from '../common/color.helper';
+import { Series } from '../models/chart-data.model';
+import { BarOrientation } from '../common/types/bar-orientation.enum';
+import { ScaleType } from '../common/types/scale-type.enum';
+import { Gradient } from '../common/types/gradient.interface';
+export declare class LineSeriesComponent implements OnChanges {
+    data: Series;
+    xScale: any;
+    yScale: any;
+    colors: ColorHelper;
+    scaleType: ScaleType;
+    curve: any;
+    activeEntries: any[];
+    rangeFillOpacity: number;
+    hasRange: boolean;
+    animations: boolean;
+    path: string;
+    outerPath: string;
+    areaPath: string;
+    gradientId: string;
+    gradientUrl: string;
+    hasGradient: boolean;
+    gradientStops: Gradient[];
+    areaGradientStops: Gradient[];
+    stroke: string;
+    barOrientation: typeof BarOrientation;
+    ngOnChanges(changes: SimpleChanges): void;
+    update(): void;
+    getLineGenerator(): any;
+    getRangeGenerator(): any;
+    getAreaGenerator(): any;
+    sortData(data: any): any;
+    updateGradients(): void;
+    isActive(entry: any): boolean;
+    isInactive(entry: any): boolean;
+}

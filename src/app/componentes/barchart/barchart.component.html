@@ -1,0 +1,81 @@
+
+    
+    <div class="container">
+       
+        <div class="row">
+          <div class="col-md-6">
+       
+
+                <ngx-charts-bar-vertical
+              
+                [scheme]="lineChartScheme"
+                [animations]="animations"
+              
+                [view]="[550,350]"
+                [results]="datasingle"
+                [gradient]="gradient"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [legend]="showLegend"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel"
+                (select)="onSelect($event)"
+                style="fill: white;"
+              >
+              </ngx-charts-bar-vertical>
+            
+           
+          </div>
+          <!-- <div class="col-sm-1">
+            <ngx-charts-linear-gauge
+            [scheme]="'nightLights'"
+            [value]="value"
+            [previousValue]="previousValue"
+            (select)="onSelect($event)"
+            [units]="units"
+            style="fill: white;">
+            </ngx-charts-linear-gauge>
+          </div> -->
+          <div class="col-md-6">
+         
+                <ngx-charts-area-chart-stacked 
+               
+                [scheme]="'nightLights'"
+                [results]="datamulti"
+                [animations]="animations"
+                
+                [view]="[680,400]"
+                [gradient]="gradient"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [legend]="showLegend"
+                [timeline]="timeline"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel"
+                (select)="onSelect($event)"
+                style="fill: white;">
+              </ngx-charts-area-chart-stacked>
+            
+           
+          </div>
+        </div>
+      </div>
+   
+    <div class="container">
+        <div class="row">
+          <ngx-charts-number-card
+          [view]="[600,250]"
+          [scheme]="'nightLights'"
+          [results]="datasingle"
+          [cardColor]="cardColor"
+          (select)="onSelect($event)">
+        </ngx-charts-number-card>
+        </div>
+    </div>   
+    
+    
+   

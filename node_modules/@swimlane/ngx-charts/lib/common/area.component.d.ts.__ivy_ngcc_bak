@@ -1,0 +1,31 @@
+import { EventEmitter, ElementRef, OnChanges } from '@angular/core';
+import { AreaChartSeries } from '../models/chart-data.model';
+import { BarOrientation } from './types/bar-orientation.enum';
+import { Gradient } from './types/gradient.interface';
+export declare class AreaComponent implements OnChanges {
+    data: AreaChartSeries;
+    path: string;
+    startingPath: string;
+    fill: string;
+    opacity: number;
+    startOpacity: number;
+    endOpacity: number;
+    gradient: boolean;
+    stops: Gradient[];
+    animations: boolean;
+    select: EventEmitter<any>;
+    element: HTMLElement;
+    gradientId: string;
+    gradientFill: string;
+    areaPath: string;
+    animationsLoaded: boolean;
+    gradientStops: Gradient[];
+    hasGradient: boolean;
+    barOrientation: typeof BarOrientation;
+    constructor(element: ElementRef);
+    ngOnChanges(): void;
+    update(): void;
+    loadAnimation(): void;
+    updatePathEl(): void;
+    getGradient(): Gradient[];
+}

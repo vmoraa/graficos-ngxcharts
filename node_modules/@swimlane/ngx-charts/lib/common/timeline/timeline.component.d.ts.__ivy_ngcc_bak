@@ -1,0 +1,33 @@
+import { EventEmitter, ElementRef, OnChanges, ChangeDetectorRef, SimpleChanges } from '@angular/core';
+import { ScaleType } from '../types/scale-type.enum';
+import { ViewDimensions } from '../types/view-dimension.interface';
+export declare class Timeline implements OnChanges {
+    private cd;
+    view: [number, number];
+    results: any;
+    scheme: any;
+    customColors: any;
+    legend: boolean;
+    autoScale: boolean;
+    scaleType: ScaleType;
+    height: number;
+    select: EventEmitter<any>;
+    onDomainChange: EventEmitter<any>;
+    element: HTMLElement;
+    dims: ViewDimensions;
+    xDomain: any[];
+    xScale: any;
+    brush: any;
+    transform: string;
+    initialized: boolean;
+    filterId: string;
+    filter: string;
+    constructor(element: ElementRef, cd: ChangeDetectorRef);
+    ngOnChanges(changes: SimpleChanges): void;
+    update(): void;
+    getXDomain(): any[];
+    getXScale(): any;
+    addBrush(): void;
+    updateBrush(): void;
+    getDims(): ViewDimensions;
+}

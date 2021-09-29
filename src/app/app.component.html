@@ -1,0 +1,38 @@
+
+
+
+<mat-toolbar  color="primary" class="estilo2">
+    <mat-toolbar-row>
+        <button mat-icon-button>
+            <mat-icon (click)="sidenav.toggle();" >menu</mat-icon>
+        </button>
+        <h1>STACK E.N.A</h1>
+    </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-sidenav-container class="estilo2">
+        <mat-sidenav #sidenav  mode="side" class="estilo2" >
+            <mat-nav-list >
+                <a mat-list-item class="color-fuente">Monitor</a>
+                <a mat-list-item class="color-fuente">Configuración</a>
+                <a mat-list-item class="color-fuente">Usuarios</a>
+                <a mat-list-item class="color-fuente">Ayuda</a>
+                <a mat-list-item class="color-fuente">Salir</a>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+           
+                <router-outlet>
+    
+                </router-outlet>
+           
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+    
+    
+    
+    
+    
+    
+    
+
+
